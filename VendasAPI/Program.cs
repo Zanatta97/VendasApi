@@ -1,5 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using VendasAPI.Context;
 
 namespace VendasAPI
 {
@@ -14,6 +16,11 @@ namespace VendasAPI
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            var mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<VendasAPIContext>(options =>
+                    options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
 
             var app = builder.Build();
 

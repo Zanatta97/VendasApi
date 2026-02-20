@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hof6EypNf1g=",
+  "dgSpecHash": "HFwbAx2/4Bo=",
   "success": true,
-  "projectFilePath": "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\VendasAPI.csproj",
+  "projectFilePath": "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\VendasAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samuel.zanatta\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\samuel.zanatta\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",

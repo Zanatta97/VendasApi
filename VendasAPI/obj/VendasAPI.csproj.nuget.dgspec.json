@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\VendasAPI.csproj": {}
+    "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\VendasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\VendasAPI.csproj": {
+    "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\VendasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\VendasAPI.csproj",
+        "projectUniqueName": "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\VendasAPI.csproj",
         "projectName": "VendasAPI",
-        "projectPath": "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\VendasAPI.csproj",
+        "projectPath": "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\VendasAPI.csproj",
         "packagesPath": "C:\\Users\\samuel.zanatta\\.nuget\\packages\\",
-        "outputPath": "C:\\Portfolio\\CSharp\\VendasAPI\\VendasAPI\\obj\\",
+        "outputPath": "C:\\ProjetosTeste\\VendasApi\\VendasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
