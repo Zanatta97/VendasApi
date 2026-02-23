@@ -1,7 +1,7 @@
 Sales System Web API - API REST de Sistema de Vendas
 <p align="center">
-<a href="#-sobre-o-projeto">Português</a> •
-<a href="#-about-the-project">English</a>
+<a href="#sobre-o-projeto">Português</a> •
+<a href="#about-the-project">English</a>
 </p>
 
 ---
