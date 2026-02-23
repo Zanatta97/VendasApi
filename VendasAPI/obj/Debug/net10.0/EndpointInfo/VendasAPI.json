@@ -13,12 +13,11 @@
     }
   ],
   "paths": {
-    "/WeatherForecast": {
+    "/Produtos": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Produtos"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
             "description": "OK",
@@ -27,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Produto"
                   }
                 }
               },
@@ -35,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Produto"
                   }
                 }
               },
@@ -43,7 +42,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Produto"
                   }
                 }
               }
@@ -55,14 +54,16 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Produto": {
+        "required": [
+          "nome",
+          "valor",
+          "tipo",
+          "estoque"
+        ],
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
+          "id": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -70,19 +71,43 @@
             ],
             "format": "int32"
           },
-          "temperatureF": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "summary": {
+          "nome": {
+            "maxLength": 100,
+            "minLength": 0,
             "type": [
               "null",
               "string"
             ]
+          },
+          "valor": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "tipo": {
+            "maxLength": 1,
+            "minLength": 1,
+            "type": "string",
+            "format": "char"
+          },
+          "estoque": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "valorPromocao": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
           }
         }
       }
@@ -90,7 +115,7 @@
   },
   "tags": [
     {
-      "name": "WeatherForecast"
+      "name": "Produtos"
     }
   ]
 }

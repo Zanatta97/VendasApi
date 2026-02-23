@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "VendasAPI.Controllers.WeatherForecastController",
+    "ContainingType": "VendasAPI.Controllers.ProdutosController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "Produtos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.WeatherForecast, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.Produto, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +17,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]

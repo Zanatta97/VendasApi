@@ -157,3 +157,4 @@ C:\ProjetosTeste\VendasApi\VendasAPI\obj\Debug\net10.0\refint\VendasAPI.dll
 C:\ProjetosTeste\VendasApi\VendasAPI\obj\Debug\net10.0\VendasAPI.pdb
 C:\ProjetosTeste\VendasApi\VendasAPI\obj\Debug\net10.0\VendasAPI.genruntimeconfig.cache
 C:\ProjetosTeste\VendasApi\VendasAPI\obj\Debug\net10.0\ref\VendasAPI.dll
+C:\ProjetosTeste\VendasApi\VendasAPI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
