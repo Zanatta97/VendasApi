@@ -27,5 +27,14 @@ namespace VendasAPI.Controllers
             return produtos;
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<Produto> Get(int id)
+        {
+            var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
+            if (produto is null)
+                return NotFound($"Produto com id {id} não encontrado!");
+            return produto;
+        }
+
     }
 }
