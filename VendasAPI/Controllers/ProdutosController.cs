@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -27,7 +29,7 @@ namespace VendasAPI.Controllers
             return produtos;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}", Name="ObterProduto")]
         public ActionResult<Produto> Get(int id)
         {
             var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
@@ -36,5 +38,41 @@ namespace VendasAPI.Controllers
             return produto;
         }
 
+        [HttpPost]
+        public ActionResult Post(Produto produto)
+        {
+            if (produto is null)
+                return BadRequest("Produto Inválido");
+
+            _context.Produtos.Add(produto);
+            _context.SaveChanges();
+            return new CreatedAtRouteResult("ObterProduto", new { id = produto.Id }, produto);
+
+        }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(int id, Produto produto)
+        {
+            if (id != produto.Id)
+                return BadRequest("Produto Inválido");
+
+            _context.Entry(produto).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return Ok(produto);
+        }
+
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
+
+            if (produto is null)
+                return NotFound($"Produto com id {id} não encontrado!");
+
+            _context.Produtos.Remove(produto);
+            _context.SaveChanges();
+            return Ok($"Produto com id {id} excluído com sucesso!");
+        }
     }
 }
