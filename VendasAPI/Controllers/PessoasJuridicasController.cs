@@ -41,7 +41,7 @@ namespace VendasAPI.Controllers
         public ActionResult Post(PessoaJuridica pessoaJuridica)
         {
             if (pessoaJuridica is null)
-                return BadRequest("Cliente inválido");
+                return BadRequest("Pessoa Juridica inválida");
 
             _context.PessoasJuridicas.Add(pessoaJuridica);
             _context.SaveChanges();
@@ -58,7 +58,7 @@ namespace VendasAPI.Controllers
             _context.Entry(pessoaJuridica).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
 
-            return Ok("Cliente alterado com sucesso!");
+            return Ok(pessoaJuridica);
         }
 
         [HttpDelete("{id:int}")]

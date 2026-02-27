@@ -39,18 +39,6 @@ namespace VendasAPI.Controllers
             return Ok(cliente);
         }
 
-        [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Cliente cliente)
-        {
-            if (id != cliente.Id)
-                return BadRequest("Cliente inválido");
-
-            _context.Entry(cliente).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return Ok("Cliente alterado com sucesso!");
-        }
-
         [HttpPost]
         public ActionResult Post(Cliente cliente)
         {
@@ -61,6 +49,18 @@ namespace VendasAPI.Controllers
             _context.SaveChanges();
 
             return new CreatedAtRouteResult("ObterCliente", new { id = cliente.Id }, cliente);
+        }
+
+        [HttpPut("{id:int}")]
+        public ActionResult Put(int id, Cliente cliente)
+        {
+            if (id != cliente.Id)
+                return BadRequest("Cliente inválido");
+
+            _context.Entry(cliente).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return Ok(cliente);
         }
 
         [HttpDelete("{id:int}")]

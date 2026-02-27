@@ -34,7 +34,7 @@ namespace VendasAPI.Controllers
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
 
             if (usuario is null)
-                return NotFound("Usuario não encontrado!");
+                return NotFound($"Usuario com id {id} não encontrado!");
 
             return Ok(usuario);
         }
@@ -43,7 +43,7 @@ namespace VendasAPI.Controllers
         public ActionResult Post(Usuario usuario)
         {
             if (usuario is null)
-                return BadRequest("Dados inválidos!");
+                return BadRequest("Usuário inválido!");
 
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
@@ -60,7 +60,7 @@ namespace VendasAPI.Controllers
             _context.Entry(usuario).State = EntityState.Modified;
             _context.SaveChanges();
 
-            return Ok("Usuário alterado com sucesso!");
+            return Ok(usuario);
 
         }
 
@@ -70,7 +70,7 @@ namespace VendasAPI.Controllers
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
 
             if (usuario is null)
-                return NotFound("Usuário não encontrado!");
+                return NotFound($"Usuário com id {id} não encontrado!");
 
             _context.Usuarios.Remove(usuario);
             _context.SaveChanges();

@@ -72,7 +72,7 @@ namespace VendasAPI.Controllers
 
             _context.Produtos.Remove(produto);
             _context.SaveChanges();
-            return Ok($"Produto com id {id} excluído com sucesso!");
+            return Ok($"Produto excluído com sucesso!");
         }
     }
 }

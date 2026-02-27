@@ -60,7 +60,7 @@ namespace VendasAPI.Controllers
             _context.Entry(pessoaFisica).State = EntityState.Modified;
             _context.SaveChanges();
 
-            return Ok("Pessoa Física alterada com sucesso!");
+            return Ok(pessoaFisica);
         }
 
         [HttpDelete("{id:int}")]

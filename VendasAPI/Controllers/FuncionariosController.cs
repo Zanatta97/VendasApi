@@ -59,7 +59,7 @@ namespace VendasAPI.Controllers
             _context.Entry(funcionario).State = EntityState.Modified;
             _context.SaveChanges();
 
-            return Ok("Funcionario alterado com sucesso!");
+            return Ok(funcionario);
         }
          [HttpDelete("{id:int}")]
          public ActionResult Delete(int id)
