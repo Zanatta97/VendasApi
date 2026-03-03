@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace VendasAPI.Model
 {
@@ -8,8 +9,10 @@ namespace VendasAPI.Model
     {
         public int Id { get; set; }
         public int VendaId { get; set; }
+        [JsonIgnore]
         public Venda? Venda { get; set; }
         public int FormaPagamentoId { get; set; }
+        [JsonIgnore]
         public FormaPagamento? FormaPagamento { get; set; }
         
         [Required]

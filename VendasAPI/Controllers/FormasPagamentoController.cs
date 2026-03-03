@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -18,7 +19,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<FormaPagamento>> Get()
         {
-            var formasPagamento = _context.FormasPagamento.ToList();
+            var formasPagamento = _context.FormasPagamento.AsNoTracking().ToList();
 
             if (formasPagamento is null)
                 return NotFound("Nenhuma Forma de Pagamento cadastrada no sistema!");
@@ -29,7 +30,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterFormaPagamento")]
         public ActionResult<FormaPagamento> Get(int id)
         {
-            var formaPagamento = _context.FormasPagamento.FirstOrDefault(f => f.Id == id);
+            var formaPagamento = _context.FormasPagamento.AsNoTracking().FirstOrDefault(f => f.Id == id);
 
             if (formaPagamento is null)
                 return NotFound($"Forma de Pagamento com id {id} não encontrada!");

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace VendasAPI.Model
 {
@@ -29,6 +30,7 @@ namespace VendasAPI.Model
         [StringLength(100)]
         public string? Estado { get; set; }
 
+        [JsonIgnore]
         public ICollection<Venda>? Compras { get; set; }
 
         public Cliente()

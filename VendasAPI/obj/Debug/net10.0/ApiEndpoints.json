@@ -100,6 +100,616 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VendasAPI.Controllers.CuponsController",
+    "Method": "GetCupons",
+    "RelativePath": "Cupons",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.Cupom, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.CuponsController",
+    "Method": "CreateCupom",
+    "RelativePath": "Cupons",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cupom",
+        "Type": "VendasAPI.Model.Cupom",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.Cupom",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.CuponsController",
+    "Method": "GetCupom",
+    "RelativePath": "Cupons/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.Cupom",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterCupom"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.CuponsController",
+    "Method": "UpdateCupom",
+    "RelativePath": "Cupons/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cupom",
+        "Type": "VendasAPI.Model.Cupom",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.CuponsController",
+    "Method": "DeleteCupom",
+    "RelativePath": "Cupons/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasEntregaController",
+    "Method": "Get",
+    "RelativePath": "FormasEntrega",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.FormaEntrega, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasEntregaController",
+    "Method": "Post",
+    "RelativePath": "FormasEntrega",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formaEntrega",
+        "Type": "VendasAPI.Model.FormaEntrega",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasEntregaController",
+    "Method": "Get",
+    "RelativePath": "FormasEntrega/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.FormaEntrega",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterFormaEntrega"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasEntregaController",
+    "Method": "Put",
+    "RelativePath": "FormasEntrega/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "formaEntrega",
+        "Type": "VendasAPI.Model.FormaEntrega",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasEntregaController",
+    "Method": "Delete",
+    "RelativePath": "FormasEntrega/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasPagamentoController",
+    "Method": "Get",
+    "RelativePath": "FormasPagamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.FormaPagamento, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasPagamentoController",
+    "Method": "Post",
+    "RelativePath": "FormasPagamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "formaPagamento",
+        "Type": "VendasAPI.Model.FormaPagamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasPagamentoController",
+    "Method": "Get",
+    "RelativePath": "FormasPagamento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.FormaPagamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterFormaPagamento"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasPagamentoController",
+    "Method": "Put",
+    "RelativePath": "FormasPagamento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "formaPagamento",
+        "Type": "VendasAPI.Model.FormaPagamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FormasPagamentoController",
+    "Method": "Delete",
+    "RelativePath": "FormasPagamento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FuncionariosController",
+    "Method": "Get",
+    "RelativePath": "Funcionarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.Funcionario, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FuncionariosController",
+    "Method": "Post",
+    "RelativePath": "Funcionarios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "funcionario",
+        "Type": "VendasAPI.Model.Funcionario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FuncionariosController",
+    "Method": "Get",
+    "RelativePath": "Funcionarios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.Funcionario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterFuncionario"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FuncionariosController",
+    "Method": "Put",
+    "RelativePath": "Funcionarios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "funcionario",
+        "Type": "VendasAPI.Model.Funcionario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.FuncionariosController",
+    "Method": "Delete",
+    "RelativePath": "Funcionarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasFisicasController",
+    "Method": "Get",
+    "RelativePath": "PessoasFisicas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.PessoaFisica, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasFisicasController",
+    "Method": "Post",
+    "RelativePath": "PessoasFisicas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pessoaFisica",
+        "Type": "VendasAPI.Model.PessoaFisica",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasFisicasController",
+    "Method": "Get",
+    "RelativePath": "PessoasFisicas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.PessoaFisica",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterPessoaFisica"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasFisicasController",
+    "Method": "Put",
+    "RelativePath": "PessoasFisicas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pessoaFisica",
+        "Type": "VendasAPI.Model.PessoaFisica",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasFisicasController",
+    "Method": "Delete",
+    "RelativePath": "PessoasFisicas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasJuridicasController",
+    "Method": "Get",
+    "RelativePath": "PessoasJuridicas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.PessoaJuridica, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasJuridicasController",
+    "Method": "Post",
+    "RelativePath": "PessoasJuridicas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pessoaJuridica",
+        "Type": "VendasAPI.Model.PessoaJuridica",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasJuridicasController",
+    "Method": "Get",
+    "RelativePath": "PessoasJuridicas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.PessoaJuridica",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterPessoaJuridica"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasJuridicasController",
+    "Method": "Put",
+    "RelativePath": "PessoasJuridicas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pessoaJuridica",
+        "Type": "VendasAPI.Model.PessoaJuridica",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.PessoasJuridicasController",
+    "Method": "Delete",
+    "RelativePath": "PessoasJuridicas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VendasAPI.Controllers.ProdutosController",
     "Method": "Get",
     "RelativePath": "Produtos",
@@ -298,5 +908,125 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "Get",
+    "RelativePath": "Vendas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.Venda, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "Post",
+    "RelativePath": "Vendas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "venda",
+        "Type": "VendasAPI.Model.Venda",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "Get",
+    "RelativePath": "Vendas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "VendasAPI.Model.Venda",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterVenda"
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "Put",
+    "RelativePath": "Vendas/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "venda",
+        "Type": "VendasAPI.Model.Venda",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "Delete",
+    "RelativePath": "Vendas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VendasAPI.Controllers.VendasController",
+    "Method": "GetVendasClientes",
+    "RelativePath": "Vendas/cliente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VendasAPI.Model.Venda, VendasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

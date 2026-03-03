@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -19,7 +20,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<FormaEntrega>> Get()
         {
-            var formasEntrega = _context.FormasEntrega.ToList();
+            var formasEntrega = _context.FormasEntrega.AsNoTracking().ToList();
 
             if (formasEntrega is null)
                 return NotFound("Nenhuma Forma de Entrega cadastrada no sistema!");
@@ -30,7 +31,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterFormaEntrega")]
         public ActionResult<FormaEntrega> Get(int id)
         {
-            var formaEntrega = _context.FormasEntrega.FirstOrDefault(f => f.Id == id);
+            var formaEntrega = _context.FormasEntrega.AsNoTracking().FirstOrDefault(f => f.Id == id);
 
             if (formaEntrega is null)
                 return NotFound($"Forma de Entrega com id {id} não encontrada!");

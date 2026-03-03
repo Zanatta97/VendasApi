@@ -19,7 +19,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Funcionario>> Get()
         {
-            var funcionarios = _context.Funcionarios.ToList();
+            var funcionarios = _context.Funcionarios.AsNoTracking().ToList();
 
             if (funcionarios is null)
                 return NotFound("Nenhum Funcionario cadastrado no sistema!");
@@ -30,7 +30,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterFuncionario")]
         public ActionResult<Funcionario> Get(int id)
         {
-            var funcionario = _context.Funcionarios.FirstOrDefault(f => f.Id == id);
+            var funcionario = _context.Funcionarios.AsNoTracking().FirstOrDefault(f => f.Id == id);
 
             if (funcionario is null)
                 return NotFound($"Funcionario com id {id} não encontrado!");

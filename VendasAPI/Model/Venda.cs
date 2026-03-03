@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace VendasAPI.Model
 {
@@ -10,6 +11,7 @@ namespace VendasAPI.Model
 
         // Relacionamento com Cliente
         public int ClienteId { get; set; }
+        [JsonIgnore]
         public Cliente? Cliente { get; set; }
 
         //Relacionamento N pra N com Produto e FormaPagamento
@@ -22,6 +24,7 @@ namespace VendasAPI.Model
 
         // Relacionamento com FormaEntrega
         public int? EntregaId { get; set; }
+        [JsonIgnore]
         public FormaEntrega? Entrega { get; set; }
 
         [Required]
@@ -30,6 +33,7 @@ namespace VendasAPI.Model
 
         // Relacionamento com Cupom
         public int? CupomId { get; set; }
+        [JsonIgnore]
         public Cupom? CupomUtilizado { get; set; }
 
         [Required]

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -18,18 +19,35 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Venda>> Get()
         {
-            var vendas = _context.Vendas.ToList();
+            try
+            {
+                var vendas = _context.Vendas.AsNoTracking().ToList();
 
-            if (vendas is null)
-                return NotFound("Nenhuma Venda cadastrada no sistema!");
+                if (vendas is null)
+                    return NotFound("Nenhuma Venda cadastrada no sistema!");
 
-            return Ok(vendas);
+                return Ok(vendas);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, 
+                    $"Ocorreu um erro ao processar a solicitação. {e.Message}");
+            }
+
+            
+        }
+
+        //Usado apenas para propósitos de entendimento de como funciona o serialization do C#
+        [HttpGet("cliente")]
+        public ActionResult<IEnumerable<Venda>> GetVendasClientes()
+        {
+            return _context.Vendas.Include(c => c.Cliente).AsNoTracking().ToList();
         }
 
         [HttpGet("{id:int}", Name = "ObterVenda")]
         public ActionResult<Venda> Get(int id)
         {
-            var venda = _context.Vendas.FirstOrDefault(v => v.Id == id);
+            var venda = _context.Vendas.AsNoTracking().FirstOrDefault(v => v.Id == id);
 
             if (venda is null)
                 return NotFound($"Venda com id {id} não encontrada!");

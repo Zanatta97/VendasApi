@@ -20,7 +20,10 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Cliente>> Get()
         {
-            var clientes = _context.Clientes.ToList();
+            //Retorna os 10 primeiros clientes
+            var clientes = _context.Clientes.AsNoTracking().Take(10).ToList();
+            //AsNoTracking() para melhorar a performance, pois não precisamos rastrear as entidades retornadas
+            //Evitar retornar todos os registros em uma consulta para não ter lentidão, nesse caso, limitamos a 10 registros
 
             if (clientes is null)
                 return NotFound("Nenhum Cliente cadastrado no sistema!");
@@ -31,7 +34,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterCliente")]
         public ActionResult<Cliente> Get(int id)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c => c.Id == id);
+            var cliente = _context.Clientes.AsNoTracking().FirstOrDefault(c => c.Id == id);
 
             if (cliente is null)
                 return NotFound($"Cliente com id {id} não encontrado!");

@@ -20,7 +20,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> Get()
         {
-            var usuarios = _context.Usuarios.ToList();
+            var usuarios = _context.Usuarios.AsNoTracking().ToList();
 
             if (usuarios is null)
                 return NotFound("Nenhum Usuario cadastrado no sistema!");
@@ -31,7 +31,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterUsuario")]
         public ActionResult<Usuario> Get(int id)
         {
-            var usuario = _context.Usuarios.FirstOrDefault(u => u.Id == id);
+            var usuario = _context.Usuarios.AsNoTracking().FirstOrDefault(u => u.Id == id);
 
             if (usuario is null)
                 return NotFound($"Usuario com id {id} não encontrado!");

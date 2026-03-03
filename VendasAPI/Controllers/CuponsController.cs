@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -20,7 +21,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Cupom>> GetCupons()
         {
-            var cupons = _context.Cupons.ToList();
+            var cupons = _context.Cupons.AsNoTracking().ToList();
             if (cupons is null)
                 return NotFound("Nenhum Cupom cadastrado no sistema");
 
@@ -30,7 +31,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterCupom")]
         public ActionResult<Cupom> GetCupom(int id)
         {
-            var cupom = _context.Cupons.Find(id);
+            var cupom = _context.Cupons.AsNoTracking().FirstOrDefault(c => c.Id == id);
             if (cupom == null)
             {
                 return NotFound($"Cupom com id {id} não encontrado");

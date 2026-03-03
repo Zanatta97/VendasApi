@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using VendasAPI.Context;
 using VendasAPI.Model;
 
@@ -18,7 +19,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<PessoaJuridica>> Get()
         {
-            var pessoasJuridicas = _context.PessoasJuridicas.ToList();
+            var pessoasJuridicas = _context.PessoasJuridicas.AsNoTracking().ToList();
 
             if (pessoasJuridicas is null)
                 return NotFound("Nenhuma Pessoa Jurídica cadastrada no sistema!");
@@ -29,7 +30,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterPessoaJuridica")]
         public ActionResult<PessoaJuridica> Get(int id)
         {
-            var pessoaJuridica = _context.PessoasJuridicas.FirstOrDefault(p => p.Id == id);
+            var pessoaJuridica = _context.PessoasJuridicas.AsNoTracking().FirstOrDefault(p => p.Id == id);
 
             if (pessoaJuridica is null)
                 return NotFound($"Pessoa Jurídica com id {id} não encontrada!");

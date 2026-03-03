@@ -20,7 +20,7 @@ namespace VendasAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<PessoaFisica>> Get()
         {
-            var pessoasFisicas = _context.PessoasFisicas.ToList();
+            var pessoasFisicas = _context.PessoasFisicas.AsNoTracking().ToList();
 
             if (pessoasFisicas is null)
                 return NotFound("Nenhuma Pessoa Física cadastrada no sistema!");
@@ -31,7 +31,7 @@ namespace VendasAPI.Controllers
         [HttpGet("{id:int}", Name = "ObterPessoaFisica")]
         public ActionResult<PessoaFisica> Get(int id)
         {
-            var pessoaFisica = _context.PessoasFisicas.FirstOrDefault(p => p.Id == id);
+            var pessoaFisica = _context.PessoasFisicas.AsNoTracking().FirstOrDefault(p => p.Id == id);
 
             if (pessoaFisica is null)
                 return NotFound($"Pessoa Física com id {id} não encontrada!");
